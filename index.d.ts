@@ -41,6 +41,8 @@ declare module "react-native-sound-player" {
     seek: (seconds: number) => void;
     /** Set the volume of the current player. This does not change the volume of the device. */
     setVolume: (volume: number) => void;
+    /** Set the playback rate of the current player. Is set to `1.0` by default. */
+    setRate: (rate: number) => void;
     /** Only available on iOS. Overwrite default audio output to speaker, which forces playUrl() function to play from speaker. */
     setSpeaker: (on: boolean) => void;
     /** Only available on iOS. If you set this option, your audio will be mixed with audio playing in background apps, such as the Music app. */

@@ -93,6 +93,10 @@ export default {
     RNSoundPlayer.setVolume(volume);
   },
 
+  setRate: (rate: number) => {
+    RNSoundPlayer.setRate(rate);
+  },
+
   setSpeaker: (on: boolean) => {
     if (Platform.OS === "android" || Platform.isTVOS) {
       console.log("setSpeaker is not implemented on Android or tvOS");

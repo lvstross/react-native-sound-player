@@ -30,11 +30,13 @@ public class RNSoundPlayerModule extends ReactContextBaseJavaModule {
   private final ReactApplicationContext reactContext;
   private MediaPlayer mediaPlayer;
   private float volume;
+  private float rate;
 
   public RNSoundPlayerModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
     this.volume = 1.0f;
+    this.rate = 1.0f;
   }
 
   @Override
@@ -98,6 +100,14 @@ public class RNSoundPlayerModule extends ReactContextBaseJavaModule {
     this.volume = volume;
     if (this.mediaPlayer != null) {
       this.mediaPlayer.setVolume(volume, volume);
+    }
+  }
+
+  @ReactMethod
+  public void setRate(float rate) throws IOException {
+    this.rate = rate;
+    if (this.mediaPlayer != null) {
+      this.mediaPlayer.setPlaybackParams(this.mediaPlayer.getPlaybackParams().setSpeed(rate));
     }
   }
 

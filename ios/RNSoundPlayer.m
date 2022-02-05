@@ -111,6 +111,15 @@ RCT_EXPORT_METHOD(setVolume:(float)volume) {
     }
 }
 
+RCT_EXPORT_METHOD(setRate:(float)rate) {
+    if (self.player != nil) {
+        [self.player.rate = rate];
+    }
+    if (self.avPlayer != nil) {
+        [self.avPlayer.rate = rate];
+    }
+}
+
 RCT_REMAP_METHOD(getInfo,
                  getInfoWithResolver:(RCTPromiseResolveBlock) resolve
                  rejecter:(RCTPromiseRejectBlock) reject) {

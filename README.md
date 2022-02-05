@@ -21,6 +21,13 @@ For RN >= 0.60 you can skip this step.
     react-native link react-native-sound-player
 ```
 
+### 3. (ios only) Install Pods
+
+```
+    cd ios
+    pod install
+```
+
 ## Usage
 
 ### Play sound with file name and type
@@ -173,6 +180,9 @@ Only available on iOS. If you set this option, your audio will be mixed with aud
 
 Set the volume of the current player. This does not change the volume of the device.
 
+### `setRate(rate: number)`
+
+Set the playback rate of the current player. Is set to `1.0` by default.
 
 ### `setNumberOfLoops(volume: number)` - iOS Only
 
